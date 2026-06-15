@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Normalize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <title>Form!</title>
+
+
+</head>
+
+<body>
+  <main class="container mt-5">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <h1 class="mb-4">Content Form</h1>
+
+        <form id="contentForm" class="needs-validation" novalidate>
+          <!-- Title -->
+          <div class="mb-3">
+            <label for="titleInput" class="form-label">Title</label>
+            <input type="text" class="form-control" id="titleInput" placeholder="Enter title" required>
+            <div class="invalid-feedback">
+              Please provide a title.
+            </div>
+          </div>
+
+          <!-- Author -->
+          <div class="mb-3">
+            <label for="authorInput" class="form-label">Author</label>
+            <input type="text" class="form-control" id="authorInput" placeholder="Enter author name" required>
+            <div class="invalid-feedback">
+              Please provide an author.
+            </div>
+          </div>
+
+          <!-- Date -->
+          <div class="mb-3">
+            <label for="dateInput" class="form-label">Date</label>
+            <input type="date" class="form-control" id="dateInput" required>
+            <div class="invalid-feedback">
+              Please provide a date.
+            </div>
+          </div>
+
+          <!-- Image -->
+          <div class="mb-3">
+            <label for="imageInput" class="form-label">Image URL</label>
+            <input type="url" class="form-control" id="imageInput" placeholder="Enter image URL">
+            <small class="text-muted">Provide a URL to an image</small>
+          </div>
+
+          <!-- Description -->
+          <div class="mb-3">
+            <label for="descriptionInput" class="form-label">Description</label>
+            <textarea class="form-control" id="descriptionInput" rows="4" placeholder="Enter description"
+              required></textarea>
+            <div class="invalid-feedback">
+              Please provide a description.
+            </div>
+          </div>
+
+          <!-- Links -->
+          <div class="mb-3">
+            <label class="form-label">Links</label>
+            <div id="linksContainer">
+              <div class="link-item mb-3 p-3 border rounded">
+                <div class="mb-2">
+                  <input type="url" class="form-control link-url" placeholder="Enter URL">
+                </div>
+                <div class="mb-2">
+                  <input type="text" class="form-control link-description" placeholder="Link description">
+                </div>
+                <button class="btn btn-outline-danger btn-sm btn-remove-link" type="button">Remove</button>
+              </div>
+            </div>
+            <button type="button" class="btn btn-outline-secondary btn-sm" id="btnAddLink">+ Add Link</button>
+          </div>
+
+          <!-- Submit -->
+          <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/form.js"></script>
+</body>
+
+</html>

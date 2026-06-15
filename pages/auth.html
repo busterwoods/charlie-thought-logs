@@ -60,14 +60,14 @@
       if (passBox === "password") {
         isAuthN = true;
         console.log('should be true');
-        sessionStorage.setItem("sessionAuthN", isAuthN);
+        sessionStorage.setItem("sessionAuthN", 'true');
         window.location.assign('../index.html');
       }
       else {
         //authN is false
         console.log('should be false');
         isAuthN = false;
-        sessionStorage.setItem("sessionAuthN", isAuthN);
+        sessionStorage.setItem("sessionAuthN", 'false');
         //stuff if wrong
       }
 
