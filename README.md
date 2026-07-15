@@ -9,7 +9,7 @@
 - **I want** to log in, create and manage content items via a form, and view those items in a content library
 - **So that** I can quickly author, preview, and organize content locally in the browser for demos or lightweight publishing
 
-## project dir/ structure
+## Project Dir/ Structure
 ```bash
 .
 │   index.html
@@ -49,7 +49,7 @@
 - **Storage:** `sessionStorage` for authentication flag, `localStorage` for content persistence
 - **Placeholder Images:** picsum.photos for automatic images when none provided
 
-## validations & accessibility checks 
+## Validations & Accessibility Checks 
 - **Form validation:**
         - Uses native HTML5 validation patterns and Bootstrap's validation styling (`novalidate` + `was-validated`) to surface errors.
         - Required fields: `title`, `author`, `date`, `description`.
@@ -64,3 +64,6 @@
         - Manual tests: login flow, form submission, link add/remove, content listing, delete item.
         - Cross-browser testing recommended for modern browsers (Chrome, Edge, Firefox, Safari).
         - Automated accessibility testing can be added via tools such as axe-core or Lighthouse for CI integration.
+
+  ## Sprint 99 / Future Dev Ideas
+  - [milestones](https://github.com/busterwoods/charlie-thought-logs/milestone/1)
