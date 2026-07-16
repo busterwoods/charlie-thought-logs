@@ -1,5 +1,5 @@
-# Web Development, Project ALFA
-> [dev project] ALFA
+# Web Development, Project charlie
+> [dev project] charlie
 
 ## Authorship and Attribution
 - Most work comes from Troy Woods, with assistance coming from GitHub Copilot (assisted with implementation and code suggestions) as well as Dr Cumbie's tutorial videos
@@ -67,3 +67,9 @@
 
   ## Sprint 99 / Future Dev Ideas
   - [milestones](https://github.com/busterwoods/charlie-thought-logs/milestone/1)
+ 
+  ## Wireframes
+  - [wireframes](https://github.com/busterwoods/charlie-thought-logs/wiki/Wireframes)
+ 
+  ## Issues/Ideas
+  - [issues](https://github.com/busterwoods/charlie-thought-logs/issues?q=is%3Aissue%20state%3Aopen%20label%3Abrainstorm)
