@@ -2,68 +2,70 @@
 > [dev project] charlie
 
 ## Authorship and Attribution
-- Most work comes from Troy Woods, with assistance coming from GitHub Copilot (assisted with implementation and code suggestions) as well as Dr Cumbie's tutorial videos
+- Most work comes from Troy Woods, with assistance coming from GitHub Copilot (assisted with implementation and code suggestions) as well as Dr Cumbie's tutorial videos and gists
 
 ## User Story
 - **As a** Software Developer and Site Administrator
 - **I want** to log in, create and manage content items via a form, and view those items in a content library
-- **So that** I can quickly author, preview, and organize content locally in the browser for demos or lightweight publishing
+- **So that** I can quickly author, preview, and organize content locally in the browser for others to view.
 
 ## Project Dir/ Structure
 ```bash
 .
-│   index.html
-│   README.md
-│
-├───assets
-│   ├───css
-│   │       style.css
-│   │       
-│   ├───img
-│   │       logo.png
-│   │       
-│   └───js
-│           main.js
-│           form.js
-│           content.js
-│
-├───configuration
-│       AGENTS.md
-│       CLAUDE.md
-│           
-├───docs
-│       SESSION_OVERVIEW.md
-│
-└───pages
-│       auth.html
-│       form.html
-│       content.html
-│
+│  index.html
+│  README.md
+│  
+├─assets
+│  ├─css
+│  │      style.css
+│  │      
+│  ├─data
+│  │      ideas.json
+│  │      
+│  └─js
+│          admin.js
+│          auth-guard.js
+│          auth.js
+│          content.js
+│          form.js
+│          main.js
+│          
+├─config
+│  │  AGENTS.md
+│  │  CLAUDE.md
+│  │  
+│  └─wireframes
+│          charlie-admin-wireframe.png
+│          charlie-content-wireframe.png
+│          charlie-form-wireframe.png
+│          charlie-login-wireframe.png
+│          
+├─docs
+│      sample-content-records.json
+│      
+└─pages
+        admin.html
+        auth.html
+        content.html
+        form.html
 ```
 
 ## Tech Stack
 - **CSS Framework:** Bootstrap 5 (via CDN)
 - **Icons:** Bootstrap Icons (via CDN)
 - **JavaScript:** Vanilla ES6+ (no modules) — code kept in external `.js` files
+- **DOM APIs:** Native browser DOM manipulation via `document`, `Element`, `Template`, and event listeners
+- **Data Format:** JSON for structured content records and sample seed data
+- **Browser Storage:** `sessionStorage` for authentication state and `localStorage` for content persistence
+- **Networking:** `fetch()` for loading JSON data and optional runtime IP lookup
+- **Forms & Validation:** Native HTML5 form validation, `required`, `type="url"`, and Bootstrap validation styling
 - **Style Guides:** Google Style Guide for HTML, CSS, and JavaScript
-- **Storage:** `sessionStorage` for authentication flag, `localStorage` for content persistence
 - **Placeholder Images:** picsum.photos for automatic images when none provided
 
-## Validations & Accessibility Checks 
-- **Form validation:**
-        - Uses native HTML5 validation patterns and Bootstrap's validation styling (`novalidate` + `was-validated`) to surface errors.
-        - Required fields: `title`, `author`, `date`, `description`.
-        - URL fields use `type="url"` to encourage valid links; additional runtime checks are added where appropriate.
-
-- **Accessibility considerations:**
-        - Semantic HTML elements are used throughout (form controls, labels, headings).
-        - Form controls are labeled and include `aria`-appropriate attributes where necessary.
-        - Visual contrast is provided by Bootstrap; review custom CSS in `assets/css/style.css` to ensure sufficient contrast.
-
-- **Testing & Manual Checks:**
-        - Manual tests: login flow, form submission, link add/remove, content listing, delete item.
-        - Cross-browser testing recommended for modern browsers (Chrome, Edge, Firefox, Safari).
-        - Automated accessibility testing can be added via tools such as axe-core or Lighthouse for CI integration.
+## resources
+- **Github:** repos, pages, wiki, issues, milestone, Gist
+- **VSCode:** LiveServer, TODO Highlight
+- **References:** Dr. Cumbie Gists, Dr. Cumbie Videos, codeAcademy
 
   ## Sprint 99 / Future Dev Ideas
   - [milestones](https://github.com/busterwoods/charlie-thought-logs/milestone/1)

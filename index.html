@@ -1,7 +1,6 @@
-<!-- this above is NOT an HTML element (tag) -->
-<!-- This is a declaration -->
-<!DOCTYPE html>
+<!-- demo updated code for video -->
 
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -15,54 +14,246 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
-  <title>Index</title>
+  <title>Thought Logs</title>
 </head>
 
-<body class="d-flex flex-column min-vh-100">
-  <main class="flex-fill">
-    <h1>Welcome to my Page!</h1>
+<body class="bb-page bb-content-page">
+  <div class="bb-app-shell">
+    <nav class="bb-navbar">
+      <div class="container bb-topbar">
+        <div class="d-flex align-items-center gap-2 text-nowrap">
+          <a class="btn btn-outline-dark btn-sm px-3 navbar-action-btn" href="index.html">
+            <i class="bi bi-house me-1" aria-hidden="true"></i>Home
+          </a>
+          <a class="btn btn-outline-dark btn-sm px-3 navbar-action-btn" href="pages/form.html">
+            <i class="bi bi-plus-circle me-1" aria-hidden="true"></i>Add Idea
+          </a>
+          <a class="btn btn-outline-dark btn-sm px-3 navbar-action-btn" href="pages/admin.html">
+            <i class="bi bi-shield-lock me-1" aria-hidden="true"></i>Admin
+          </a>
+        </div>
+        <div class="bb-title-wrap flex-grow-1 text-center">
+          <h1 class="bb-title m-0">Thought Logs</h1>
+        </div>
+        <div class="d-flex align-items-center gap-2 justify-content-end">
+          <span class="bb-profile-chip text-dark">
+            <i class="bi bi-person-circle me-1" aria-hidden="true"></i>
+            <span id="navProfileName">User</span>
+          </span>
+          <button id="logoutBtn" class="btn btn-outline-dark btn-sm px-3 navbar-action-btn" type="button">
+            <i class="bi bi-box-arrow-right me-1" aria-hidden="true"></i>Sign Out
+          </button>
+        </div>
+      </div>
+    </nav>
 
-    <p id="loginState"> logged in</p>
+    <header class="bb-page-hero">
+      <div class="container">
+        <div class="bb-hero-card">
+          <div>
+            <p class="bb-kicker">Thoughts</p>
+            <h2>Thoughts on Random Topics</h2>
+          </div>
+          <a href="pages/form.html" class="btn bb-hero-cta">
+            <i class="bi bi-plus-circle-fill me-2" aria-hidden="true"></i>Add Idea
+          </a>
+        </div>
+      </div>
+    </header>
 
-    <a href="pages/auth.html">login/logout</a> |
+    <section class="bb-subnav">
+      <div class="container">
+        <div class="bb-subnav-row">
+          <div class="bb-search-wrap">
+            <label class="visually-hidden" for="ideaSearch">Search ideas</label>
+            <div class="input-group bb-search-group">
+              <span class="input-group-text"><i class="bi bi-search" aria-hidden="true"></i></span>
+              <input id="ideaSearch" class="form-control bb-search-input" type="search" placeholder="search all text">
+            </div>
+          </div>
+          <div class="bb-control-label"><i class="bi bi-sort-down-alt me-1" aria-hidden="true"></i>Sort</div>
+          <div id="sortButtons" class="d-flex flex-wrap gap-2" role="group" aria-label="Sort ideas">
+            <button type="button" class="btn btn-sm bb-filter-toggle is-active" data-sort="created"><i
+                class="bi bi-calendar-plus me-1" aria-hidden="true"></i>Created</button>
+            <button type="button" class="btn btn-sm bb-filter-toggle" data-sort="modified"><i
+                class="bi bi-calendar-check me-1" aria-hidden="true"></i>Modified</button>
+            <button type="button" class="btn btn-sm bb-filter-toggle" data-sort="author"><i
+                class="bi bi-person-badge me-1" aria-hidden="true"></i>Author</button>
+            <button type="button" class="btn btn-sm bb-filter-toggle" data-sort="title"><i class="bi bi-type me-1"
+                aria-hidden="true"></i>Title</button>
+            <button type="button" id="likedOnlyButton" class="btn btn-sm bb-filter-toggle" data-liked-only="true"
+              aria-pressed="false">
+              <i class="bi bi-heart me-1" aria-hidden="true"></i>Liked only
+            </button>
+          </div>
+          <a href="pages/form.html" class="btn btn-sm bb-add-idea-btn">
+            <i class="bi bi-plus-circle-fill me-1" aria-hidden="true"></i>
+            <i class="bi bi-lightbulb me-1" aria-hidden="true"></i>
+            Add Idea
+          </a>
+        </div>
+        <div class="bb-control-label mt-2"><i class="bi bi-clock-history me-1" aria-hidden="true"></i>Recent searches
+        </div>
+        <div id="recentSearches" class="bb-recent-wrap" aria-live="polite"></div>
+        <div class="bb-control-label mt-2"><i class="bi bi-funnel me-1" aria-hidden="true"></i>Filter by tag</div>
+        <div id="tagFilterButtons" class="d-flex flex-wrap gap-2 mt-2" role="group" aria-label="Tag filters">
+          <button type="button" class="btn btn-sm bb-filter-toggle is-active" data-tag="all"><i class="bi bi-grid me-1"
+              aria-hidden="true"></i>All tags</button>
+        </div>
+        <p id="activeFiltersSummary" class="bb-active-summary mb-0" aria-live="polite"></p>
+      </div>
+    </section>
 
-    <a href="pages/content.html">content</a>
-    |
-    <a href="pages/form.html">form</a>
-    <!-- 
-    <p id='logoutState'></p> -->
-  </main>
-  <script>
+    <main class="container bb-shell pt-3">
+      <section class="bb-section-card">
+        <div id="ideaList" class="bb-idea-list-grid"></div>
+        <template id="ideaCardTemplate">
+          <article class="card bb-idea-card">
+            <div class="card-body p-2 p-md-3">
+              <div class="bb-idea-grid">
+                <img class="bb-idea-thumb" data-field="image" src="" alt="">
+                <div>
+                  <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-1">
+                    <h2 class="h6 mb-0" data-field="title"></h2>
+                    <div class="d-flex align-items-center gap-2">
+                      <span class="badge text-bg-light border" data-field="date"></span>
+                      <span class="badge text-bg-warning border d-none" data-field="status">Deleted</span>
+                      <button type="button" class="bb-favorite-btn" data-field="favorite" aria-label="Like idea"
+                        aria-pressed="false">
+                        <i class="bi bi-heart" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <p class="bb-idea-meta mb-1" data-field="author"></p>
+                  <p class="bb-idea-desc mb-0" data-field="description"></p>
+                  <div class="d-flex flex-wrap gap-1 mt-2" data-field="tags"></div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </template>
+      </section>
+    </main>
 
-    const isAuthN = sessionStorage.getItem('sessionAuthN');
+    <div class="modal fade" id="ideaDetailModal" tabindex="-1" aria-labelledby="ideaDetailTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div>
+              <h2 class="modal-title h5 mb-1" id="ideaDetailTitle">Idea Details</h2>
+              <p id="ideaDetailTagline" class="bb-muted mb-0"></p>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <button type="button" id="ideaEditBtn" class="btn btn-sm btn-outline-primary">
+                <i class="bi bi-pencil-square me-1" aria-hidden="true"></i>Edit
+              </button>
+              <button type="button" id="ideaDeleteBtn" class="btn btn-sm btn-outline-danger">
+                <i class="bi bi-trash me-1" aria-hidden="true"></i>Delete
+              </button>
+              <button type="button" id="ideaRestoreBtn" class="btn btn-sm btn-outline-success d-none">
+                <i class="bi bi-arrow-counterclockwise me-1" aria-hidden="true"></i>Restore
+              </button>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-12 col-md-4">
+                <img id="ideaDetailImage" class="img-fluid rounded border" src="" alt="Idea image preview">
+                <div class="small text-muted mt-2">
+                  <div><strong>Author:</strong> <span id="ideaDetailAuthor"></span></div>
+                  <div><strong>Created:</strong> <span id="ideaDetailCreated"></span></div>
+                  <div><strong>Modified:</strong> <span id="ideaDetailModified"></span></div>
+                </div>
+              </div>
+              <div class="col-12 col-md-8">
+                <section class="mb-3">
+                  <h3 class="h6 mb-1">Narrative</h3>
+                  <p id="ideaDetailNarrative" class="mb-0"></p>
+                </section>
 
-    if (isAuthN == "true") {
-      document.getElementById('loginState').innerText = 'Hello, Troy.'
-    }
+                <section class="mb-3">
+                  <h3 class="h6 mb-1">Tags</h3>
+                  <div id="ideaDetailTags" class="d-flex flex-wrap gap-1"></div>
+                </section>
 
-    else {
-      document.getElementById('loginState').innerText = 'Please Log In'
-    }
+                <section>
+                  <h3 class="h6 mb-1">Links</h3>
+                  <ul id="ideaDetailLinks" class="mb-0 ps-3"></ul>
+                </section>
+              </div>
+            </div>
 
-  </script>
+            <section class="mt-3">
+              <h3 class="h6 mb-2">Notes</h3>
+              <div id="ideaDetailNotes" class="vstack gap-2 mb-3"></div>
 
-  <footer class="text-center py-4 mt-auto">
-    <a href="https://busterwoods.github.io/alfa/">home</a> |
-    <a href="https://github.com/busterwoods" target="_blank">Github</a> |
-    <a href="https://github.com/busterwoods/alfa" target="_blank">Repo</a> |
-    <a href="https://linkedin.com/in/troy-woods-42b1b1338" target="_blank">LinkedIn</a> |
-  </footer>
+              <form id="ideaNoteForm" class="border rounded p-2 bg-light-subtle" novalidate>
+                <input type="hidden" id="ideaNoteRecordId">
+                <div class="row g-2 mb-2">
+                  <div class="col-12 col-md-6">
+                    <label for="ideaNoteAuthor" class="form-label small text-uppercase fw-semibold mb-1">Author</label>
+                    <input type="text" id="ideaNoteAuthor" class="form-control form-control-sm" readonly>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label for="ideaNoteDate" class="form-label small text-uppercase fw-semibold mb-1">Date</label>
+                    <input type="text" id="ideaNoteDate" class="form-control form-control-sm" readonly>
+                  </div>
+                  <div class="col-12">
+                    <label for="ideaNoteTitle" class="form-label small text-uppercase fw-semibold mb-1">Title</label>
+                    <input type="text" id="ideaNoteTitle" class="form-control form-control-sm"
+                      placeholder="Short note title" required>
+                  </div>
+                  <div class="col-12">
+                    <label for="ideaNoteText" class="form-label small text-uppercase fw-semibold mb-1">Text</label>
+                    <textarea id="ideaNoteText" class="form-control form-control-sm" rows="3"
+                      placeholder="Write your note..." required></textarea>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                  <button type="button" id="ideaNoteCancelEdit" class="btn btn-sm btn-outline-secondary me-2 d-none">
+                    Cancel Edit
+                  </button>
+                  <button type="submit" class="btn btn-sm btn-primary">
+                    <i class="bi bi-journal-plus me-1" aria-hidden="true"></i>Add Note
+                  </button>
+                </div>
+              </form>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <footer class="bb-footer">
+      <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <span class="bb-muted">Thought Logs</span>
+        <a class="bb-muted" href="https://github.com/busterwoods" target="_blank">Github</a>
+        <a class="bb-muted" href="https://github.com/busterwoods/charlie-thought-logs" target="_blank">Repo</a>
+        <a class="bb-muted" href="https://linkedin.com/in/troy-woods-42b1b1338" target="_blank">LinkedIn</a>
+        <span class="bb-muted">Idea board</span>
+      </div>
+    </footer>
 
-  <!-- Custom JS -->
-  <script src="../assets/js/main.js"></script>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Shared Auth Guard -->
+    <script src="assets/js/auth-guard.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+  </div>
 </body>
 
 </html>

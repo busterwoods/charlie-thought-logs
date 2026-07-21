@@ -12,45 +12,118 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="../assets/css/style.css">
 
-  <title>Content</title>
-
+  <title>Content Board</title>
 
 </head>
 
 <body>
-
-  <div class="container mt-5">
-    <div class="row mb-4">
-      <div class="col-12">
-        <h1 class="mb-4">Content Library</h1>
-        <a href="form.html" class="btn btn-primary mb-3">Create New Content</a>
-        <a href="../index.html" class="btn btn-secondary mb-3">&larr; Go home</a>
+  <nav class="bb-navbar">
+    <div class="container bb-topbar">
+      <div class="d-flex align-items-center gap-2 text-nowrap">
+        <a class="btn btn-outline-dark btn-sm px-3 navbar-action-btn" href="../index.html">
+          <i class="bi bi-house me-1" aria-hidden="true"></i>Home
+        </a>
+        <a class="btn btn-outline-dark btn-sm px-3 navbar-action-btn" href="form.html">
+          <i class="bi bi-plus-circle me-1" aria-hidden="true"></i>Add Idea
+        </a>
+        <a class="btn btn-outline-dark btn-sm px-3 navbar-action-btn" href="admin.html">
+          <i class="bi bi-shield-lock me-1" aria-hidden="true"></i>Admin
+        </a>
+      </div>
+      <div class="bb-title-wrap flex-grow-1 text-center">
+        <h1 class="bb-title m-0">Thought Logs</h1>
+      </div>
+      <div class="d-flex align-items-center gap-2 justify-content-end">
+        <span class="bb-profile-chip text-dark">
+          <i class="bi bi-person-circle me-1" aria-hidden="true"></i>
+          <span id="navProfileName">User</span>
+        </span>
+        <button id="logoutBtn" class="btn btn-outline-dark btn-sm px-3 navbar-action-btn" type="button">
+          <i class="bi bi-box-arrow-right me-1" aria-hidden="true"></i>Sign Out
+        </button>
       </div>
     </div>
+  </nav>
 
-    <div class="row" id="cardsContainer">
-      <!-- Dynamic cards will be loaded here -->
+  <main class="container bb-shell">
+    <header class="mb-4">
+      <h1 class="bb-section-title mb-2">Content Collection</h1>
+      <p class="bb-muted mb-0">Task 3 includes one hard-coded exemplar Bootstrap card below as the data and DOM template
+        baseline.</p>
+    </header>
+
+    <section class="mb-4" aria-labelledby="exemplar-heading">
+      <h2 id="exemplar-heading" class="h5 mb-3">Exemplar Card (Hard-Coded Template)</h2>
+      <article class="card bb-card-exemplar">
+        <div class="card-header">
+          <h3 class="h5 mb-1">Sample Project Idea: Local Learning Hub</h3>
+          <p class="mb-0 bb-muted">by Troy Woods | Thr, Jan 1, 1970</p>
+        </div>
+        <div class="card-body">
+          <img class="img-fluid rounded" src="https://picsum.photos/900/420" alt="Sample project thumbnail">
+          <p class="pt-3 mb-2">A searchable portal for course demos, links, and notes that supports iterative project
+            planning and student handoff.</p>
+          <div class="d-flex flex-wrap gap-2">
+            <a class="badge text-bg-light border text-decoration-none" href="https://getbootstrap.com/" target="_blank"
+              rel="noopener noreferrer">Bootstrap Docs</a>
+            <a class="badge text-bg-light border text-decoration-none" href="https://developer.mozilla.org/"
+              target="_blank" rel="noopener noreferrer">MDN Reference</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section aria-labelledby="saved-heading">
+      <h2 id="saved-heading" class="h5 mb-3">Saved Records</h2>
+      <div id="content-list" class="row g-4"></div>
+    </section>
+
+    <template id="content-card-template">
+      <div class="col-12">
+        <article class="card">
+          <div class="card-header">
+            <h3 class="h5 mb-1" data-field="title"></h3>
+            <p class="mb-0 bb-muted" data-field="meta"></p>
+          </div>
+          <div class="card-body">
+            <img class="img-fluid rounded" data-field="image" src="" alt="Record image">
+            <p class="pt-3 mb-2" data-field="description"></p>
+            <div class="d-flex flex-wrap gap-2" data-field="links"></div>
+          </div>
+        </article>
+      </div>
+    </template>
+  </main>
+
+  <footer class="bb-footer">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <span class="bb-muted">Thought Logs</span>
+      <a class="bb-muted" href="https://github.com/busterwoods" target="_blank">Github</a>
+      <a class="bb-muted" href="https://github.com/busterwoods/charlie-thought-logs" target="_blank">Repo</a>
+      <a class="bb-muted" href="https://linkedin.com/in/troy-woods-42b1b1338" target="_blank">LinkedIn</a>
+      <span class="bb-muted">Idea board</span>
     </div>
-  </div>
-
-  <footer class="text-center py-4 mt-auto">
-    <a href="https://busterwoods.github.io/alfa/">home</a> |
-    <a href="https://github.com/busterwoods" target="_blank">Github</a> |
-    <a href="https://github.com/busterwoods/alfa" target="_blank">Repo</a> |
-    <a href="https://linkedin.com/in/troy-woods-42b1b1338" target="_blank">LinkedIn</a> |
   </footer>
 
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
+  <!-- Shared Auth Guard -->
+  <script src="../assets/js/auth-guard.js"></script>
+
   <!-- Custom JS -->
-  <script src="../assets/js/main.js"></script>
   <script src="../assets/js/content.js"></script>
+
 </body>
 
 </html>

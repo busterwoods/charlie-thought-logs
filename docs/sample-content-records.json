@@ -1,0 +1,98 @@
+[
+  {
+    "id": "thought-1752019200000",
+    "title": "Roy",
+    "tagline": "The Florist from Wisteria",
+    "author": "twoods",
+    "date": "2026-07-09T10:00:00.000Z",
+    "createdAt": "2026-07-09T10:00:00.000Z",
+    "modifiedAt": "2026-07-09T12:20:00.000Z",
+    "narrative": "Roy is a polite florist who runs a small flower shop in the village of Wisteria. Despite his outward appearance, Roy is haunted by many insecurities and fears, stemming from his past in the military and his relationship with his mentor.",
+    "description": "Roy is a polite florist who runs a small flower shop in the village of Wisteria. Despite his outward appearance, Roy is haunted by many insecurities and fears, stemming from his past in the military and his relationship with his mentor.",
+    "tags": [
+      "game",
+      "Little Witch in the Woods",
+      "character"
+    ],
+    "links": [
+      {
+        "type": "resource",
+        "description": "wiki page",
+        "url": "https://littlewitchinthewoods.wiki.gg/wiki/Roy"
+      },
+      {
+        "type": "img",
+        "description": "Roy",
+        "url": "https://littlewitchinthewoods.wiki.gg/images/Roy.png?2a42d6"
+      }
+    ],
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWWA8li3dAWHHLRvQfmr-vPoMDbkSh4YzHplFDAHNmqA&s=10",
+    "status": "active",
+    "deletedAt": "",
+    "deletedBy": ""
+  },
+  {
+    "id": "thought-1752019200001",
+    "title": "Heathcliff",
+    "tagline": "Limbus Company Bus Department, Sinner #8",
+    "author": "twoods",
+    "date": "2026-07-10T10:00:00.000Z",
+    "createdAt": "2026-07-10T10:00:00.000Z",
+    "modifiedAt": "2026-07-10T12:20:00.000Z",
+    "narrative": "Heathcliff at first glance is a brash and violent individual. Someone who would rather use fists than words to solve problems. It is soon revealed that this violence comes from a deep self hatred, originating from the regret of his past actions.",
+    "description": "Heathcliff is a member of the Limbus Company's bus department and is identified as Sinner Number 8. He is known for his aggressive behavior and violent tendencies.",
+    "tags": [
+      "game",
+      "Limbus Company",
+      "character"
+    ],
+    "links": [
+      {
+        "type": "resource",
+        "description": "wiki page",
+        "url": "https://limbuscompany.wiki.gg/wiki/Heathcliff"
+      },
+      {
+        "type": "img",
+        "description": "Heathcliff",
+        "url": "https://limbuscompany.wiki.gg/wiki/Heathcliff#/media/File:Heathclifffull.jpg"
+      }
+    ],
+    "image": "https://static.wikia.nocookie.net/limbuscompany/images/b/b1/Heathcliff_Icon.png/revision/latest?cb=20230310043842",
+    "status": "active",
+    "deletedAt": "",
+    "deletedBy": ""
+  },
+  {
+    "id": "thought-1752019200002",
+    "title": "Tiantui Star",
+    "tagline": "Theme of the Winged Tiger",
+    "author": "twoods",
+    "date": "2026-07-11T10:00:00.000Z",
+    "createdAt": "2026-07-11T10:00:00.000Z",
+    "modifiedAt": "2026-07-11T12:20:00.000Z",
+    "narrative": "Canto VIII Boss 2 Battle Theme, dubbed Tiantui Star for brevity, is a three and a half minute instrumental piece potraying the battle between the Sinners of Limbus Company and Lei Heng, The Winged Tiger. The piece tells a story of a hunt, followed by a glimmer of hope, before a return to an unimaginable struggle, all in a short period of time.",
+    "description": "Canto VIII Boss 2 Battle Theme, dubbed Tiantui Star for brevity, is a three and a half minute instrumental piece potraying the battle between the Sinners of Limbus Company and Lei Heng, The Winged Tiger. The piece tells a story of a hunt, followed by a glimmer of hope, before a return to an unimaginable struggle, all in a short period of time.",
+    "tags": [
+      "game",
+      "Limbus Company",
+      "music"
+    ],
+    "links": [
+      {
+        "type": "resource",
+        "description": "song",
+        "url": "https://www.youtube.com/watch?v=X70m65dSM7g"
+      },
+      {
+        "type": "img",
+        "description": "Associated Character",
+        "url": "https://limbuscompany.wiki.gg/wiki/Lei_Heng#/media/File:Lei_Heng_StandingSprite.png"
+      }
+    ],
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgzDEuyHREGgBJu21tYDtB-OLF53w4cwO-TyBmoOJ6Nw&s=10",
+    "status": "active",
+    "deletedAt": "",
+    "deletedBy": ""
+  }
+]
